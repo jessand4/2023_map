@@ -3,8 +3,9 @@
     "accessToken": "pk.eyJ1IjoianNhbmRvdmFsIiwiYSI6ImNpbHd5ZXg3bTAzc2V1MGtzYWJtZ2dvN2gifQ.KAhwobxhOjuiREOOdxAbCA",
     "style": "mapbox://styles/jsandoval/clokfpezl000401pqawbta5n8",
     "center": [
-        -122.4194,
-        37.7749
+        -118.3875,
+        34.03756
     ],
-    "zoom": [11]
+    "zoom": 8.6,
+    "pitch": 40
 }
