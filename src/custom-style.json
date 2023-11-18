@@ -14,7 +14,15 @@
             "type": "line",
             "source": "neighborhoods-polygons",
             "paint":{
-                "line-width":2
+                "line-width": [
+                    "case",
+                    [
+                        "boolean",
+                        ["feature-state", "hover"],
+                        false
+                    ], 4,
+                    2
+                ]
             }
         },
         {
@@ -22,7 +30,7 @@
             "type": "fill-extrusion",
             "source": "neighborhoods-polygons",
             "paint": {
-                "fill-extrusion-opacity": 0.6,
+                "fill-extrusion-opacity": 0.5,
                 "fill-extrusion-color": [
                     "step",
                     ["get", "count"],
@@ -34,10 +42,31 @@
                     1000, "rgb(189,0,38)"
                 ],
                 "fill-extrusion-height": [
-                    "*",
-                    ["get", "count"],
-                    3
-                ]    
+                    "+",
+                    [
+                        "*",
+                        ["get", "count"],
+                        3
+                    ],
+                    [
+                        "case",
+                        [
+                            "boolean",
+                            ["feature-state", "hover"],
+                            false
+                    ], 500,
+                    0
+                    ]
+                ],
+                "fill-extrusion-base": [
+                    "case",
+                    [
+                        "boolean",
+                        ["feature-state", "hover"],
+                        false
+                    ], 500,
+                    0
+                ]   
             }
         }
     ]
